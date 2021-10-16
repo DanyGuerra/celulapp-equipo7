@@ -1,7 +1,9 @@
+import Exhibitor from "./Exhibitor";
+
 function App() {
   return (
-    <div>
-      <h1> Celulapp</h1>
+    <div className="exhibitor">
+      <Exhibitor />
     </div>
   );
 }
