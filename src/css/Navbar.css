@@ -1,0 +1,29 @@
+@media (min-width: 992px){
+
+
+.navbar-expand-lg {
+    flex-wrap: nowrap;
+    justify-content: center;
+    }
+}
+@media (min-width: 992px){
+
+.navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    gap: 3rem;
+}
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 55px;
+    margin-bottom: 12px;
+    list-style: none;
+}
+
+.img{
+    vertical-align: middle;
+    margin-right: 40px;
+    margin-left: -53px;
+}
