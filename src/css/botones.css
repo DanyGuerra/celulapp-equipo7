@@ -1,0 +1,9 @@
+
+.botones {
+    display: Flex;
+    grid-gap: 0px;
+    gap: 16px;
+    margin-left: 58px;
+    width: 73%;
+    height: 44px;
+}
