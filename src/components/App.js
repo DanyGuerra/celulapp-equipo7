@@ -1,4 +1,5 @@
 import CelularesList from "./CelularesList";
+import "../css/App.css";
 
 function App() {
   return (
