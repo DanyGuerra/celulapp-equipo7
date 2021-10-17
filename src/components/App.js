@@ -5,7 +5,6 @@ import Navbar from "react-bootstrap/Navbar";
 import CelularesList from "./CelularesList";
 import Exhibitor from "./Exhibitor";
 import "../css/App.css";
-import RegistrarCelular from "./RegistrarCelular";
 
 class App extends React.Component {
   state = {};
@@ -20,7 +19,6 @@ class App extends React.Component {
         </div>
         <Exhibitor />
         <CelularesList />
-        <RegistrarCelular />
       </>
     );
   }
