@@ -1,0 +1,7 @@
+.carousel-item img {
+  height: 50vh;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+}
