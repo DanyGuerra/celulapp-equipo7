@@ -4,25 +4,30 @@ import "../css/Exhibitor.css";
 
 const slides = [
   {
-    title: "Nuevo Iphone 13",
-    description: "Compra el nuevo Iphone 13",
-    src: "https://www.altonivel.com.mx/wp-content/uploads/2019/09/iphone-11-4.jpg",
+    title: "Title 1",
+    description: "Conoce el modelo 1",
+    src: "https://cdn.stocksnap.io/img-thumbs/960w/mobile-phone_2HSGEQ7JDB.jpg",
   },
   {
-    title: "Mas vendidos",
-    description: "Hechale un vistaso a los celulares mas vendidos del 2021",
-    src: "https://images.clarin.com/2021/01/14/samsung-galaxy-s21-el-buque___PaFSL3726_1200x630__1.jpg",
+    title: "Title 2",
+    description: "Conoce el modelo 2",
+    src: "https://cdn.stocksnap.io/img-thumbs/960w/iphone-device_WR9GMT3HBF.jpg",
   },
   {
-    title: "Mejor calificados",
-    description: "Los celulares con mejores calificaciones",
-    src: "https://www.unidiversidad.com.ar/cache/celulares-gama-alta-el-pais_1000_1100.jpg",
+    title: "Title 3",
+    description: "Conoce el modelo 3",
+    src: "https://www.lifeofpix.com/wp-content/uploads/2018/03/P1030031-1600x1200.jpg",
+  },
+  {
+    title: "Title 4",
+    description: "Conoce el modelo 4",
+    src: "https://images.pexels.com/photos/5083490/pexels-photo-5083490.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
   },
 ];
 
 function Exhibitor() {
   return (
-    <div>
+    <div className="exhibitor">
       <Carousel>
         {slides.map((slide, index) => (
           <Carousel.Item>
