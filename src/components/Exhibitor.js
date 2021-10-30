@@ -6,22 +6,17 @@ const slides = [
   {
     title: "Title 1",
     description: "Conoce el modelo 1",
-    src: "https://cdn.stocksnap.io/img-thumbs/960w/mobile-phone_2HSGEQ7JDB.jpg",
+    src: "https://celulapp.blob.core.windows.net/exhibitor/redmi-exhibitor.jpg",
   },
   {
     title: "Title 2",
     description: "Conoce el modelo 2",
-    src: "https://cdn.stocksnap.io/img-thumbs/960w/iphone-device_WR9GMT3HBF.jpg",
+    src: "https://celulapp.blob.core.windows.net/exhibitor/Mi-11-lite-Null-banner.jpg",
   },
   {
     title: "Title 3",
     description: "Conoce el modelo 3",
-    src: "https://www.lifeofpix.com/wp-content/uploads/2018/03/P1030031-1600x1200.jpg",
-  },
-  {
-    title: "Title 4",
-    description: "Conoce el modelo 4",
-    src: "https://images.pexels.com/photos/5083490/pexels-photo-5083490.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+    src: "https://celulapp.blob.core.windows.net/exhibitor/redmi11pro.webp",
   },
 ];
 
@@ -36,10 +31,10 @@ function Exhibitor() {
               src={slide.src}
               alt={`Slide ${index}`}
             />
-            <Carousel.Caption>
+            {/* <Carousel.Caption>
               <h3>{slide.title}</h3>
               <p>{slide.description}</p>
-            </Carousel.Caption>
+            </Carousel.Caption> */}
           </Carousel.Item>
         ))}
       </Carousel>

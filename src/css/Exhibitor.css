@@ -1,9 +1,5 @@
-.carousel-item img {
-  position: relative;
-}
-
 .carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .exhibitor {
@@ -11,5 +7,5 @@
 }
 
 .carousel-item {
-  height: 50vh;
+  height: 60vh;
 }
