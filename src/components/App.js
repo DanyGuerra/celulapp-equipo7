@@ -1,10 +1,11 @@
 import CelularesList from "./CelularesList";
+import Exhibitor from "./Exhibitor";
 import "../css/App.css";
 
 function App() {
   return (
     <div>
-      <h1>Celulapp</h1>
+      <Exhibitor />
       <CelularesList />
     </div>
   );
