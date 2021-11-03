@@ -5,6 +5,7 @@ import "../css/App.css";
 import Home from "./Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotFound from "./NotFound";
+import RegistrarCelular from "./RegistrarCelular";
 class App extends React.Component {
   state = {};
 
@@ -13,10 +14,8 @@ class App extends React.Component {
       <Router>
         <Header />
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-
+          <Route exact path="/" component={Home} />
+          <Route path="/agregar-celular" component={RegistrarCelular} />
           <Route path="*" component={NotFound} />
         </Switch>
       </Router>
