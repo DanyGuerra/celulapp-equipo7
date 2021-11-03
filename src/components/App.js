@@ -1,24 +1,25 @@
 import React from "react";
-import NavbarElement from "./Navbar";
+import Header from "./Header";
 import "bootstrap/dist/css/bootstrap.min.css";
-import CelularesList from "./CelularesList";
-import Exhibitor from "./Exhibitor";
 import "../css/App.css";
-
+import Home from "./Home";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import NotFound from "./NotFound";
 class App extends React.Component {
   state = {};
 
   render() {
     return (
-      <>
-        <div className="wrapper">
-          <div className="card frame">
-            <NavbarElement />
-          </div>
-        </div>
-        <Exhibitor />
-        <CelularesList />
-      </>
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+
+          <Route path="*" component={NotFound} />
+        </Switch>
+      </Router>
     );
   }
 }

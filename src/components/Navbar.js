@@ -3,12 +3,13 @@ import { Navbar, Nav, Container, NavDropdown, Image } from "react-bootstrap";
 import Botones from "./Botones";
 import "../css/Navbar.css";
 import Input from "./InputGroup";
+import { Link } from "react-router-dom";
 
 function NavbarElement() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand>
           <Image
             src="./smartphone.png"
             width="90px"
@@ -19,7 +20,14 @@ function NavbarElement() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link>
+              <Link
+                to="/"
+                style={{ color: "inherit", textDecoration: "inherit" }}
+              >
+                Home
+              </Link>
+            </Nav.Link>
             <NavDropdown title="Celulares" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Categorias</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
