@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, InputGroup, FormControl, Form } from "react-bootstrap";
+import { Button, FormControl, Form } from "react-bootstrap";
 import "../css/botones.css";
 
 class Input extends React.Component {

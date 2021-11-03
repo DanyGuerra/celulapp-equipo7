@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navbar,Nav,Container,NavDropdown,Image,Button,InputGroup,FormControl} from 'react-bootstrap';
+import {Navbar,Nav,Container,NavDropdown,Image} from 'react-bootstrap';
 import Botones from './Botones';
 import '../css/Navbar.css';
 import Input from './InputGroup'
@@ -9,7 +9,7 @@ function NavbarElement() {
   return (
 <Navbar bg="light" expand="lg">
   <Container>
-    
+
     <Navbar.Brand href="#home"><Image src="./smartphone.png" width="90px" height="90px" class="img" /></Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
@@ -29,13 +29,13 @@ function NavbarElement() {
           <Input/>
           {/*<Botones/>*/}
           <Botones/>
-     
+
       </Nav>
     </Navbar.Collapse>
   </Container>
 </Navbar>
-    
-    
+
+
 )
 };
 

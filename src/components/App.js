@@ -1,7 +1,6 @@
 import React from "react";
 import NavbarElement from "./Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "react-bootstrap/Navbar";
 import CelularesList from "./CelularesList";
 import Exhibitor from "./Exhibitor";
 import "../css/App.css";
