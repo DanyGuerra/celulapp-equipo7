@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Container, NavDropdown, Image } from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown, NavLink } from "react-bootstrap";
 import Botones from "./Botones";
 import "../css/Navbar.css";
 import Input from "./InputGroup";
@@ -7,27 +7,33 @@ import { Link } from "react-router-dom";
 
 function NavbarElement() {
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
+    <Navbar bg="light" variant="light" collapseOnSelect expand="lg">
+      <Container fluid className="navbar-flex">
         <Navbar.Brand>
-          <Image
+          {/* <Image
             src="./smartphone.png"
             width="90px"
             height="90px"
             className="img"
-          />
+          /> */}
+          <Link
+            to="/"
+            style={{
+              color: "black",
+              textDecoration: "none",
+            }}
+          >
+            Celulapp
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link>
-              <Link
-                to="/"
-                style={{ color: "inherit", textDecoration: "inherit" }}
-              >
-                Home
-              </Link>
-            </Nav.Link>
+          <Nav
+            className="justify-content-center"
+            activeKey="/
+            "
+          >
+            <NavLink href="/">Home</NavLink>
             <NavDropdown title="Celulares" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Categorias</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -39,7 +45,7 @@ function NavbarElement() {
                 Separated link
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#link">Agregar Dispostivo</Nav.Link>
+            <NavLink href="/agregar-celular">Agregar celular</NavLink>
 
             {/*<Input/>*/}
 
