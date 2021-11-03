@@ -1,4 +1,5 @@
 import Celular from "./Celular";
+import CelularDetalle from "./CelularDetalle";
 import "../css/Celulares.css";
 // import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
@@ -55,7 +56,7 @@ function CelularesList(props) {
   return (
     <Container className="List d-f">
       {dbCelulares.map((item, index) => (
-        <Celular
+        <CelularDetalle
           key={index}
           {...item}
           //   marca={item.marca}
