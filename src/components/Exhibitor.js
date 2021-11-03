@@ -25,7 +25,7 @@ function Exhibitor() {
     <div className="exhibitor">
       <Carousel>
         {slides.map((slide, index) => (
-          <Carousel.Item>
+          <Carousel.Item key={index}>
             <img
               className="d-block w-100"
               src={slide.src}
