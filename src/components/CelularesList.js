@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Celular from "./Celular";
 // import CelularDetalle from "./CelularDetalle";
 import "../css/Celulares.css";
 // import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
-import CelularDetalle from "./CelularDetalle";
+// import CelularDetalle from "./CelularDetalle";
 
 const CelularesList = (props) => {
   const celulares = [
