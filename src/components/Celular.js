@@ -10,7 +10,7 @@ function Celular({ marca, modelo, images, precio }) {
   return (
     <Container>
       <Toast style={{ width: "28rem", height: "532px" }} className="m-3 p-3">
-        <Row className="justify-content-md-center">
+        <Row className="justify-content-md-center Row">
           <Card.Img
             style={{
               "max-height": "20rem",
@@ -30,7 +30,7 @@ function Celular({ marca, modelo, images, precio }) {
           <Button
             style={{ width: "20rem" }}
             variant="primary"
-            className="text-center "
+            className="text-center btn-detalle m-0"
           >
             Detalles...
           </Button>

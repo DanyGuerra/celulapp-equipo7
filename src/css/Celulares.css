@@ -1,7 +1,14 @@
 .List {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, 28rem);
+  grid-template-columns: repeat(auto-fill, 25rem);
+}
+.Row {
+  display: flex;
+  justify-content: center;
+}
+.btn-detalle {
+  margin-bottom: 0;
 }
 .precio {
   font-size: 1.5rem;
