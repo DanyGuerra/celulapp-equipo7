@@ -7,8 +7,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-// class Celular extends React.Component {
-//   render() {
 function CelularDetalle({
   marca,
   modelo,
@@ -23,11 +21,22 @@ function CelularDetalle({
   precio,
 }) {
   return (
-    <Container>
-      <Toast style={{ width: "35rem" }} className="m-3 p-3">
-        <Row className="justify-content-md-center">
+    <Container className="detalleCelular p-5">
+      <Toast
+        style={{ width: "90%" }}
+        className="m-auto p-4 justify-content-md-center toastDetalle"
+      >
+        <Row className="justify-content-md-center xs-auto">
           <Col>
-            <Card.Img src={images} alt={modelo} />
+            <Card.Img
+              style={{
+                "max-height": "25rem",
+                width: "auto",
+              }}
+              src={images}
+              alt={modelo}
+              className="imgDetalle"
+            />
           </Col>
           <Col>
             <Card.Title as="h2" className="text-center">
@@ -50,16 +59,19 @@ function CelularDetalle({
               <strong>Pantalla: </strong> {tamano_pantalla_in}"
             </p>
             <p>
-              <strong>Camara: </strong> {}
+              <strong>Camara frontal: </strong>
+              {camara.trasera_Mpx} megapixeles <br />
+              <strong>Camara trasera: </strong>
+              {camara.trasera_Mpx} megapixeles
             </p>
             <p>
               <strong>Peso: </strong> {peso_gr}g
             </p>
             <p>
               <strong>Color: </strong>
-              {color.map}
+              {color.map((color) => `${color} `)}
             </p>
-            <span className="p-3 text-center">{precio}</span>
+            <span className="p-3 text-center precio">$ {precio}</span>
             <Button variant="primary" className="text-center m-2">
               Agregar al carrito
             </Button>

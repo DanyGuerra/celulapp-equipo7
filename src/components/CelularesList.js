@@ -224,19 +224,15 @@ const CelularesList = (props) => {
   return (
     <Container className="List d-f">
       {celulares.map((item) => (
-        // <Celular
-        //   key={item._id}
-        //   {...item}
-        //   //   marca={item.marca}
-        //   //   modelo={item.modelo}
-        //   //   sistema_operativo={item.sistema_operativo}
-        //   //   almacenamiento_gb={item.almacenamiento_gb}
-        //   //   color={item.color}
-        //   //   img={item.img}
-        // />
         <Celular key={item._id} {...item} />
       ))}
     </Container>
   );
 };
 export default CelularesList;
+
+// <Container className="">
+//   {celulares.map((item) => (
+//     <CelularDetalle key={item._id} {...item} />
+//   ))}
+// </Container>

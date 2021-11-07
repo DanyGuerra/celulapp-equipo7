@@ -9,6 +9,20 @@
   margin: 1rem;
   font-weight: bold;
 }
-Col {
-  background: red;
+
+.imgDetalle {
+  max-height: 30rem;
+  width: auto;
+  /* max-width: ; */
+}
+@media (max-width: 600px) {
+  .detalleCelular {
+    padding: 1rem;
+  }
+  .toastDetalle {
+    width: 95%;
+  }
+  .imgDetalle {
+    width: 35rem;
+  }
 }
