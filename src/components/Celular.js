@@ -9,21 +9,13 @@ import Col from "react-bootstrap/Col";
 
 // class Celular extends React.Component {
 //   render() {
-function Celular({
-  marca,
-  modelo,
-  sistema_operativo,
-  almacenamiento_gb,
-  color,
-  img,
-  precio,
-}) {
+function Celular({ marca, modelo, images, precio }) {
   return (
     <Container>
       <Toast style={{ width: "35rem" }} className="m-3 p-3">
         <Row className="justify-content-md-center">
           <Col>
-            <Card.Img src={img} alt={img} />
+            <Card.Img src={images} alt={modelo} />
           </Col>
           <Col>
             <Card.Title as="h2" className="text-center">
@@ -32,20 +24,9 @@ function Celular({
             <Card.Subtitle as="h5" className="text-center mb-5 text-muted">
               {modelo}
             </Card.Subtitle>
-            <p>
-              <strong>Sistemna Operativo: </strong>
-              {sistema_operativo}
-            </p>
-            <p>
-              <strong>Almacenamiento: </strong> {almacenamiento_gb}gb
-            </p>
-            <p>
-              <strong>Color: </strong>
-              {color}
-            </p>
-            <span className="p-3 text-center">{precio}</span>
+            <span className="p-3 text-center">$ {precio}</span>
             <Button variant="primary" className="text-center m-2">
-              Agregar al carrito
+              Detalles
             </Button>
           </Col>
         </Row>

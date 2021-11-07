@@ -14,8 +14,12 @@ function CelularDetalle({
   modelo,
   sistema_operativo,
   almacenamiento_gb,
+  ram_gb,
+  camara,
+  tamano_pantalla_in,
+  peso_gr,
   color,
-  img,
+  images,
   precio,
 }) {
   return (
@@ -23,7 +27,7 @@ function CelularDetalle({
       <Toast style={{ width: "35rem" }} className="m-3 p-3">
         <Row className="justify-content-md-center">
           <Col>
-            <Card.Img src={img} alt={img} />
+            <Card.Img src={images} alt={modelo} />
           </Col>
           <Col>
             <Card.Title as="h2" className="text-center">
@@ -37,11 +41,23 @@ function CelularDetalle({
               {sistema_operativo}
             </p>
             <p>
-              <strong>Almacenamientos: </strong> {almacenamiento_gb}gb
+              <strong>Almacenamiento: </strong> {almacenamiento_gb}gb
+            </p>
+            <p>
+              <strong>Memoria Ram: </strong> {ram_gb}gb
+            </p>
+            <p>
+              <strong>Pantalla: </strong> {tamano_pantalla_in}"
+            </p>
+            <p>
+              <strong>Camara: </strong> {}
+            </p>
+            <p>
+              <strong>Peso: </strong> {peso_gr}g
             </p>
             <p>
               <strong>Color: </strong>
-              {color}
+              {color.map}
             </p>
             <span className="p-3 text-center">{precio}</span>
             <Button variant="primary" className="text-center m-2">
