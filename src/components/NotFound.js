@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+// import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const NotFound = () => {
   return (
     <>
-      <h1>Pagina no encontrada</h1>
+      <h1>Página no encontrada</h1>
       <h1>
         <Link
           to="/"
@@ -13,7 +14,8 @@ const NotFound = () => {
             fontSize: "30px",
           }}
         >
-          Regresar a inicio
+          {/* <ArrowBackIcon fontSize="Medium"></ArrowBackIcon> */}
+          Ir a inicio
         </Link>
       </h1>
     </>
