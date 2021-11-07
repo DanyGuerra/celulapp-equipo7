@@ -2,11 +2,35 @@
   margin-top: 3rem;
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, 35rem);
+  grid-template-columns: repeat(auto-fill, 25rem);
 }
-span {
+.Row {
+  display: flex;
+  justify-content: center;
+}
+.btn-detalle {
+  margin-bottom: 0;
+}
+.precio {
   font-size: 1.5rem;
   text-align: center;
   margin: 1rem;
   font-weight: bold;
+}
+
+.imgDetalle {
+  max-height: 30rem;
+  width: auto;
+  /* max-width: ; */
+}
+@media (max-width: 600px) {
+  .detalleCelular {
+    padding: 1rem;
+  }
+  .toastDetalle {
+    width: 95%;
+  }
+  .imgDetalle {
+    width: 35rem;
+  }
 }
