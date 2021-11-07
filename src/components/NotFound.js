@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+// import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 const NotFound = () => {
   return (
@@ -14,7 +14,7 @@ const NotFound = () => {
             fontSize: "30px",
           }}
         >
-          <ArrowBackIcon fontSize="Medium"></ArrowBackIcon>
+          {/* <ArrowBackIcon fontSize="Medium"></ArrowBackIcon> */}
           Ir a inicio
         </Link>
       </h1>

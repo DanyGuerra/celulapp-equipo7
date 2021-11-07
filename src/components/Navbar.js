@@ -4,7 +4,7 @@ import Botones from "./Botones";
 import "../css/Navbar.css";
 import Input from "./InputGroup";
 import { Link } from "react-router-dom";
-import PhoneIcon from "@mui/icons-material/PhoneAndroid";
+// import { PhoneAndroidIcon } from "@mui/icons-material";
 
 function NavbarElement() {
   return (
@@ -24,7 +24,7 @@ function NavbarElement() {
               textDecoration: "none",
             }}
           >
-            <PhoneIcon fontSize="large"></PhoneIcon>
+            {/* <PhoneAndoridIcon fontSize="large"></PhoneAndoridIcon> */}
             Celulapp
           </Link>
         </Navbar.Brand>
