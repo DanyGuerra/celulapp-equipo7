@@ -1,11 +1,14 @@
 .List {
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, 35rem);
+  grid-template-columns: repeat(auto-fill, 28rem);
 }
-span {
+.precio {
   font-size: 1.5rem;
   text-align: center;
   margin: 1rem;
   font-weight: bold;
+}
+Col {
+  background: red;
 }

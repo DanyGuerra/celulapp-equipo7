@@ -201,7 +201,16 @@ const CelularesList = (props) => {
 
   // useEffect(() => {
   //   // const URL = "https://celulapp.herokuapp.com/v1/celulares";
-  //   fetch("https://celulapp.herokuapp.com/v1/celulares")
+  //   fetch(
+  //     "https://celulapp.herokuapp.com/v1/celulares",
+  //     // {
+  //     //   headers: {
+  //     //     Authorization:
+  //     //       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODc0YjdjZjJlMTcxMDAxNjk0YWJmYSIsInVzZXJuYW1lIjoiYXJ0dXJvIiwiZXhwIjoxNjM4ODQ4NjM3LCJpYXQiOjE2MzYyNTY2Mzd9.1cxdOlkeCXr43k3fUgaoeAHeXMumIUlfFxkkCMIN7W8",
+  //     //     "Content-Type": "application/json;charset=utf-8",
+  //     //   },
+  //     // }
+  //   )
   //     .then((res) => res.json())
   //     .then((data) => setCelulares(data));
   //   // const getData = async () => {
@@ -225,7 +234,7 @@ const CelularesList = (props) => {
         //   //   color={item.color}
         //   //   img={item.img}
         // />
-        <CelularDetalle key={item._id} {...item} />
+        <Celular key={item._id} {...item} />
       ))}
     </Container>
   );
