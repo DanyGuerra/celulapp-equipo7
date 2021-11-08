@@ -4,7 +4,6 @@ import Celular from "./Celular";
 import "../css/Celulares.css";
 // import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
-import CelularDetalle from "./CelularDetalle";
 
 const CelularesList = (props) => {
   // const celulares = [
@@ -196,72 +195,59 @@ const CelularesList = (props) => {
   //     updatedAt: "2021-10-30T20:42:13.211Z",
   //     __v: 0,
   //   },
-  // ];
-  // const [celulares, setCelulares] = useState([]);
-
-  // useEffect(() => {
-  //   // const URL = "https://celulapp.herokuapp.com/v1/celulares";
-  //   fetch(
-  //     "http://celulapp.herokuapp.com/v1/celulares",
-  //     {
-  //       method: "GET",
-  //       mode: "no-cors",
-  //     }
-  //     // {
-  //     //   headers: {
-  //     //     Authorization:
-  //     //       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODc0YjdjZjJlMTcxMDAxNjk0YWJmYSIsInVzZXJuYW1lIjoiYXJ0dXJvIiwiZXhwIjoxNjM4ODQ4NjM3LCJpYXQiOjE2MzYyNTY2Mzd9.1cxdOlkeCXr43k3fUgaoeAHeXMumIUlfFxkkCMIN7W8",
-  //     //     "Content-Type": "application/json;charset=utf-8",
-  //     //   },
-  //     // }
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => setCelulares(data));
-  //   // const getData = async () => {
-  //   //   const res = await fetch(URL);
-  //   //   const data = await res.json();
-  //   //   setCelulares(data);
-  //   // };
-  //   // getData();
-  // }, []);
-
-  let celulares = [];
-  fetch("https://celulapp.herokuapp.com/v1/celulares", {
-    method: "GET",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json",
-      accept: "application/json",
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "X-Requested-With",
-    },
-  })
-    .then((response) => response.text())
-    .then((text) => console.log(text));
-  // .then(function (response) {
-  //   return response.json();
-  // })
-  // .then((json) => console.log(json));
-  // .then((data) => (celulares = data));
-  // .then(function (data) {
-  //   console.log(data.results);
-  // })
-  // .catch(function (error) {
-  //   console.log(error);
-  // });
-
-  // fetch("https://celulapp.herokuapp.com/v1/celulares", {
-  //   method: "GET",
-  //   mode: "no-cors",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     accept: "application/json",
-  //     "Access-Control-Allow-Origin": "*",
-  //     "Access-Control-Allow-Headers": "X-Requested-With",
+  //   {
+  //     camara: {
+  //       trasera_Mpx: 12,
+  //       frontal_Mpx: 7,
+  //     },
+  //     color: ["negro", "blanco", "rojo"],
+  //     imagenes: [],
+  //     _id: "617dae2553b40438b85b4313",
+  //     images: [
+  //       "https://celulapp.blob.core.windows.net/celulares/iphone-se-2020.webp",
+  //     ],
+  //     marca: "apple",
+  //     modelo: "iphone se 2020",
+  //     precio: 8051,
+  //     almacenamiento_gb: 64,
+  //     ram_gb: 3,
+  //     peso_gr: 148,
+  //     bateria_mAh: 1821,
+  //     tamano_pantalla_in: 4.7,
+  //     sistema_operativo: "ios",
+  //     createdAt: "2021-10-30T20:42:13.211Z",
+  //     updatedAt: "2021-10-30T20:42:13.211Z",
+  //     __v: 0,
   //   },
-  // })
-  //   .then((response) => response.json())
-  //   .then((json) => console.log(json));
+  // ];
+
+  const [celulares, setCelulares] = useState([]);
+  // let celulares = []
+
+  useEffect(() => {
+    const URL = "https://celulapp.herokuapp.com/v1/celulares";
+    fetch(URL, {
+      method: "GET",
+      // mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        // accept: "application/json",
+        // "Access-Control-Allow-Origin": "*",
+        // "Access-Control-Allow-Methods": "GET",
+        // "Access-Control-Allow-Headers": "X-Requested-With",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => setCelulares(data));
+    // .then((data) => celulares = data);
+    // const getData = async () => {
+    //   const res = await fetch(URL);
+    //   const data = await res.json();
+    //   setCelulares(data.res);
+    // };
+    // getData();
+  }, []);
+
   return (
     <Container className="List d-f">
       {celulares.map((item) => (

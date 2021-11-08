@@ -13,9 +13,9 @@ function Celular({ marca, modelo, images, precio }) {
         <Row className="justify-content-md-center Row">
           <Card.Img
             style={{
-              "max-height": "20rem",
+              maxHeight: "20rem",
               width: "auto",
-              "text-align": "center",
+              textAlign: "center",
             }}
             src={images}
             alt={modelo}
