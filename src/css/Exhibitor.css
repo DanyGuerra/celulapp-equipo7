@@ -1,7 +1,16 @@
-.carousel-item img {
-  height: 50vh;
+img {
+  max-height: 60vh;
 }
 
-.carousel-caption {
-  background-color: rgba(0, 0, 0, 0.5);
+/* .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+*/
+
+.exhibitor {
+  margin: 0 10%;
+}
+
+.carousel-item {
+  height: 50%;
 }

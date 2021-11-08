@@ -7,19 +7,34 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-function CelularDetalle({
-  marca,
-  modelo,
-  sistema_operativo,
-  almacenamiento_gb,
-  ram_gb,
-  camara,
-  tamano_pantalla_in,
-  peso_gr,
-  color,
-  images,
-  precio,
-}) {
+function CelularDetalle(props) {
+  const celular = {
+    camara: {
+      trasera_Mpx: 108,
+      frontal_Mpx: 44,
+    },
+    color: ["negro", "plata", "gris", "marron", "metallic blue"],
+    imagenes: [],
+    _id: "617dae2553b40438b85b430a",
+    images: [
+      "https://celulapp.blob.core.windows.net/celulares/samsung-s21-ultra.webp",
+    ],
+    marca: "samsung",
+    modelo: "galaxy s21 ultra",
+    precio: 29999,
+    almacenamiento_gb: 128,
+    ram_gb: 12,
+    peso_gr: 227,
+    bateria_mAh: 5000,
+    tamano_pantalla_in: 6.8,
+    sistema_operativo: "android",
+    createdAt: "2021-10-30T20:42:13.210Z",
+    updatedAt: "2021-10-30T20:42:13.210Z",
+    __v: 0,
+  };
+
+  const id = props.match.params.id;
+  console.log(id);
   return (
     <Container className="detalleCelular p-5">
       <Toast
@@ -30,48 +45,48 @@ function CelularDetalle({
           <Col>
             <Card.Img
               style={{
-                "max-height": "25rem",
+                maxHeight: "25rem",
                 width: "auto",
               }}
-              src={images}
-              alt={modelo}
+              src={celular.images}
+              alt={celular.modelo}
               className="imgDetalle"
             />
           </Col>
           <Col>
             <Card.Title as="h2" className="text-center">
-              {marca}
+              {celular.marca}
             </Card.Title>
             <Card.Subtitle as="h5" className="text-center mb-5 text-muted">
-              {modelo}
+              {celular.modelo}
             </Card.Subtitle>
             <p>
               <strong>Sistemna Operativo: </strong>
-              {sistema_operativo}
+              {celular.sistema_operativo}
             </p>
             <p>
-              <strong>Almacenamiento: </strong> {almacenamiento_gb}gb
+              <strong>Almacenamiento: </strong> {celular.almacenamiento_gb}gb
             </p>
             <p>
-              <strong>Memoria Ram: </strong> {ram_gb}gb
+              <strong>Memoria Ram: </strong> {celular.ram_gb}gb
             </p>
             <p>
-              <strong>Pantalla: </strong> {tamano_pantalla_in}"
+              <strong>Pantalla: </strong> {celular.tamano_pantalla_in}"
             </p>
             <p>
               <strong>Camara frontal: </strong>
-              {camara.trasera_Mpx} megapixeles <br />
+              {celular.camara.trasera_Mpx} megapixeles <br />
               <strong>Camara trasera: </strong>
-              {camara.trasera_Mpx} megapixeles
+              {celular.camara.trasera_Mpx} megapixeles
             </p>
             <p>
-              <strong>Peso: </strong> {peso_gr}g
+              <strong>Peso: </strong> {celular.peso_gr}g
             </p>
             <p>
               <strong>Color: </strong>
-              {color.map((color) => `${color} `)}
+              {celular.color.map((color) => `${color} `)}
             </p>
-            <span className="p-3 text-center precio">$ {precio}</span>
+            <span className="p-3 text-center precio">$ {celular.precio}</span>
             <Button variant="primary" className="text-center m-2">
               Agregar al carrito
             </Button>
