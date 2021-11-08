@@ -20,7 +20,6 @@ function CelularDetalle(props) {
           );
           const data = await response.json();
           setCelular(data);
-          console.log(data);
         } catch (e) {
           console.error(e);
         }
@@ -61,24 +60,35 @@ function CelularDetalle(props) {
               {celular.sistema_operativo}
             </p>
             <p>
-              <strong>Almacenamiento: </strong> {celular.almacenamiento_gb}gb
+              <strong>Almacenamiento: </strong> {celular.almacenamiento_gb} gb
             </p>
             <p>
-              <strong>Memoria Ram: </strong> {celular.ram_gb}gb
+              <strong>Memoria Ram: </strong> {celular.ram_gb} gb
             </p>
             <p>
-              <strong>Pantalla: </strong> {celular.tamano_pantalla_in}"
+              <strong>Pantalla: </strong> {celular.tamano_pantalla_in} "
             </p>
             {/* <p>
-              <strong> {"Camara frontal:"} </strong>
-              {Object.values(celular.camara)}
-              <br />
               <strong>Camara trasera: </strong>
               {Object.values(celular.camara)}
             </p> */}
+
+            {/*
+            <p>
+              <strong> Camara frontal: </strong>
+              {Object.values(celular.camara)[1]}
+            </p>
             <p>
               <strong>Peso: </strong> {celular.peso_gr}g
+            </p> */}
+            <p>
+              <strong>Peso: </strong> {celular.peso_gr} gr
             </p>
+
+            <p>
+              <strong>Bateria: </strong> {celular.bateria_mAh} mAh
+            </p>
+
             <p>
               <strong>Color: </strong>
               {celular.color + " "}
