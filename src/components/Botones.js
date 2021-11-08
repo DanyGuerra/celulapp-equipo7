@@ -1,18 +1,27 @@
-import React from 'react'
+import React from 'react';
 
-import {Button} from 'react-bootstrap'
+import { Button } from 'react-bootstrap';
 import '../css/botones.css';
+import SignUpModal from './SignUpModal';
 
- class Botones extends React.Component{
-     render(){
-         return (
-             <div className="botones">
-                  <Button variant="outline-primary">Login</Button>
-                  <Button variant="outline-secondary">Sign Up</Button>
-             </div>
+function Botones() {
+  const [modalSignUpShow, setModalSignUpShow] = React.useState(false);
 
+  return (
+    <div className='botones'>
+      <Button variant='outline-primary'>Login</Button>
+      <Button
+        variant='outline-secondary'
+        onClick={() => setModalSignUpShow(true)}
+      >
+        Sign Up
+      </Button>
+      <SignUpModal
+        show={modalSignUpShow}
+        onHide={() => setModalSignUpShow(false)}
+      />
+    </div>
+  );
+}
 
-         )
-     }
- }
- export default Botones;
+export default Botones;
