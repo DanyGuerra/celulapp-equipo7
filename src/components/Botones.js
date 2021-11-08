@@ -2,14 +2,22 @@ import React from 'react';
 
 import { Button } from 'react-bootstrap';
 import '../css/botones.css';
+import LoginModal from './LoginModal';
 import SignUpModal from './SignUpModal';
 
 function Botones() {
   const [modalSignUpShow, setModalSignUpShow] = React.useState(false);
+  const [modalLoginShow, setModalLoginShow] = React.useState(false);
 
   return (
     <div className='botones'>
-      <Button variant='outline-primary'>Login</Button>
+      <Button variant='outline-primary' onClick={() => setModalLoginShow(true)}>
+        Login
+      </Button>
+      <LoginModal
+        show={modalLoginShow}
+        onHide={() => setModalLoginShow(false)}
+      />
       <Button
         variant='outline-secondary'
         onClick={() => setModalSignUpShow(true)}
