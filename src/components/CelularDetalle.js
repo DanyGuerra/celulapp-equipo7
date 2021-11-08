@@ -8,33 +8,29 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 function CelularDetalle(props) {
-  const celular = {
-    camara: {
-      trasera_Mpx: 108,
-      frontal_Mpx: 44,
-    },
-    color: ["negro", "plata", "gris", "marron", "metallic blue"],
-    imagenes: [],
-    _id: "617dae2553b40438b85b430a",
-    images: [
-      "https://celulapp.blob.core.windows.net/celulares/samsung-s21-ultra.webp",
-    ],
-    marca: "samsung",
-    modelo: "galaxy s21 ultra",
-    precio: 29999,
-    almacenamiento_gb: 128,
-    ram_gb: 12,
-    peso_gr: 227,
-    bateria_mAh: 5000,
-    tamano_pantalla_in: 6.8,
-    sistema_operativo: "android",
-    createdAt: "2021-10-30T20:42:13.210Z",
-    updatedAt: "2021-10-30T20:42:13.210Z",
-    __v: 0,
-  };
-
+  const [celular, setCelular] = React.useState({});
   const id = props.match.params.id;
-  console.log(id);
+
+  React.useEffect(
+    function () {
+      const getData = async () => {
+        try {
+          const response = await fetch(
+            `https://celulapp.herokuapp.com/v1/celulares/${id}`
+          );
+          const data = await response.json();
+          setCelular(data);
+          console.log(data);
+        } catch (e) {
+          console.error(e);
+        }
+      };
+
+      getData();
+    },
+    [id]
+  );
+
   return (
     <Container className="detalleCelular p-5">
       <Toast
@@ -61,7 +57,7 @@ function CelularDetalle(props) {
               {celular.modelo}
             </Card.Subtitle>
             <p>
-              <strong>Sistemna Operativo: </strong>
+              <strong>Sistema Operativo: </strong>
               {celular.sistema_operativo}
             </p>
             <p>
@@ -73,18 +69,19 @@ function CelularDetalle(props) {
             <p>
               <strong>Pantalla: </strong> {celular.tamano_pantalla_in}"
             </p>
-            <p>
-              <strong>Camara frontal: </strong>
-              {celular.camara.trasera_Mpx} megapixeles <br />
+            {/* <p>
+              <strong> {"Camara frontal:"} </strong>
+              {Object.values(celular.camara)}
+              <br />
               <strong>Camara trasera: </strong>
-              {celular.camara.trasera_Mpx} megapixeles
-            </p>
+              {Object.values(celular.camara)}
+            </p> */}
             <p>
               <strong>Peso: </strong> {celular.peso_gr}g
             </p>
             <p>
               <strong>Color: </strong>
-              {celular.color.map((color) => `${color} `)}
+              {celular.color + " "}
             </p>
             <span className="p-3 text-center precio">$ {celular.precio}</span>
             <Button variant="primary" className="text-center m-2">
