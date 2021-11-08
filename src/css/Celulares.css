@@ -8,9 +8,9 @@
   display: flex;
   justify-content: center;
 }
-.btn-detalle {
+/* .btn-detalle {
   margin-bottom: 0;
-}
+} */
 .precio {
   font-size: 1.5rem;
   text-align: center;
