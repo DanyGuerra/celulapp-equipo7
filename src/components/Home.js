@@ -1,11 +1,11 @@
 import Exhibitor from "./Exhibitor";
 import CelularesList from "./CelularesList";
 
-function Home() {
+function Home(props) {
   return (
     <>
       <Exhibitor />
-      <CelularesList />
+      <CelularesList celulares={props.celulares} />
     </>
   );
 }

@@ -7,19 +7,29 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-function CelularDetalle({
-  marca,
-  modelo,
-  sistema_operativo,
-  almacenamiento_gb,
-  ram_gb,
-  camara,
-  tamano_pantalla_in,
-  peso_gr,
-  color,
-  images,
-  precio,
-}) {
+function CelularDetalle(props) {
+  const [celular, setCelular] = React.useState({});
+  const id = props.match.params.id;
+
+  React.useEffect(
+    function () {
+      const getData = async () => {
+        try {
+          const response = await fetch(
+            `https://celulapp.herokuapp.com/v1/celulares/${id}`
+          );
+          const data = await response.json();
+          setCelular(data);
+        } catch (e) {
+          console.error(e);
+        }
+      };
+
+      getData();
+    },
+    [id]
+  );
+
   return (
     <Container className="detalleCelular p-5">
       <Toast
@@ -30,48 +40,60 @@ function CelularDetalle({
           <Col>
             <Card.Img
               style={{
-                "max-height": "25rem",
+                maxHeight: "25rem",
                 width: "auto",
               }}
-              src={images}
-              alt={modelo}
+              src={celular.images}
+              alt={celular.modelo}
               className="imgDetalle"
             />
           </Col>
           <Col>
             <Card.Title as="h2" className="text-center">
-              {marca}
+              {celular.marca}
             </Card.Title>
             <Card.Subtitle as="h5" className="text-center mb-5 text-muted">
-              {modelo}
+              {celular.modelo}
             </Card.Subtitle>
             <p>
-              <strong>Sistemna Operativo: </strong>
-              {sistema_operativo}
+              <strong>Sistema Operativo: </strong>
+              {celular.sistema_operativo}
             </p>
             <p>
-              <strong>Almacenamiento: </strong> {almacenamiento_gb}gb
+              <strong>Almacenamiento: </strong> {celular.almacenamiento_gb} gb
             </p>
             <p>
-              <strong>Memoria Ram: </strong> {ram_gb}gb
+              <strong>Memoria Ram: </strong> {celular.ram_gb} gb
             </p>
             <p>
-              <strong>Pantalla: </strong> {tamano_pantalla_in}"
+              <strong>Pantalla: </strong> {celular.tamano_pantalla_in} "
             </p>
-            <p>
-              <strong>Camara frontal: </strong>
-              {camara.trasera_Mpx} megapixeles <br />
+            {/* <p>
               <strong>Camara trasera: </strong>
-              {camara.trasera_Mpx} megapixeles
+              {Object.values(celular.camara)}
+            </p> */}
+
+            {/*
+            <p>
+              <strong> Camara frontal: </strong>
+              {Object.values(celular.camara)[1]}
             </p>
             <p>
-              <strong>Peso: </strong> {peso_gr}g
+              <strong>Peso: </strong> {celular.peso_gr}g
+            </p> */}
+            <p>
+              <strong>Peso: </strong> {celular.peso_gr} gr
             </p>
+
+            <p>
+              <strong>Bateria: </strong> {celular.bateria_mAh} mAh
+            </p>
+
             <p>
               <strong>Color: </strong>
-              {color.map((color) => `${color} `)}
+              {celular.color + " "}
             </p>
-            <span className="p-3 text-center precio">$ {precio}</span>
+            <span className="p-3 text-center precio">$ {celular.precio}</span>
             <Button variant="primary" className="text-center m-2">
               Agregar al carrito
             </Button>
