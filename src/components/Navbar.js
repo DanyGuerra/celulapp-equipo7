@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 function NavbarElement() {
   return (
-    <Navbar bg="light" variant="light" collapseOnSelect expand="lg">
+    <Navbar bg="light" variant="light" collapseOnSelect expand="lg" fixed="top">
       <Container fluid className="navbar-flex">
         <Navbar.Brand>
           <Link
