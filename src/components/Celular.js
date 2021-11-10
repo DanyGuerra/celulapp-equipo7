@@ -39,7 +39,7 @@ function Celular({ marca, modelo, images, precio, _id }) {
             className="text-center btn-detalle m-0"
             onClick={(e) => handleDetalles(e)}
           >
-            Detalles...
+            Detalles
           </Button>
         </Row>
       </Toast>
