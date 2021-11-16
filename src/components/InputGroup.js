@@ -14,7 +14,7 @@ class Input extends React.Component {
             className="mr-2"
             aria-label="Search"
           />
-          <Button variant="outline-success">Search</Button>
+          <Button variant="primary">Search</Button>
         </Form>
       </div>
     );

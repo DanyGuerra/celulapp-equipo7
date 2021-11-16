@@ -19,6 +19,13 @@ function NavbarElement() {
             "
           >
             <NavLink href="/">Home</NavLink>
+            <NavLink
+              onMouseOver={() => {
+                console.log("Hola");
+              }}
+            >
+              Celulares
+            </NavLink>
 
             <NavLink href="/agregar-celular">Agregar celular</NavLink>
 
