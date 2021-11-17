@@ -9,16 +9,35 @@ const SearchResults = (props) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
-  return (
-    props.showResults && (
-      <div className="search-results">
+  if (!props.showResults) {
+    return <></>;
+  } else if (props.results.length === 0) {
+    return <div className="search-no-results">No hay resultados</div>;
+  } else if (props.results.length > 0) {
+    return (
+      <div
+        className="search-results"
+        onMouseOver={() => {
+          props.setActiveResults(true);
+        }}
+        onMouseOut={() => {
+          props.setActiveResults(false);
+        }}
+      >
         {props.results.map((item, index) => (
           <div
             className="search-item"
-            onClick={() => {
+            onClick={(e) => {
               history.push(`/details/${item._id}`);
-              // props.setShowResults(false);
+              props.setShowResults(false);
+              props.setActiveResults(false);
             }}
+            // onMouseOver={() => {
+            //   props.setActiveResults(true);
+            // }}
+            // onMouseOut={() => {
+            //   props.setActiveResults(false);
+            // }}
             key={index}
           >
             <img
@@ -31,7 +50,9 @@ const SearchResults = (props) => {
           </div>
         ))}
       </div>
-    )
-  );
+    );
+  } else {
+    return <></>;
+  }
 };
 export default SearchResults;

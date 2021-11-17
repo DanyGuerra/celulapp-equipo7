@@ -36,3 +36,16 @@
 .result-img {
   width: 20px;
 }
+
+.search-no-results {
+  text-align: center;
+  padding-top: 15px;
+  width: 20%;
+  height: 50px;
+  background-color: white;
+  border: solid 1px black;
+  border-radius: 20px;
+  position: absolute;
+  top: 80px;
+  z-index: 3;
+}

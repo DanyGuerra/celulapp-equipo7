@@ -48,6 +48,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 function Input() {
   const [showResults, setShowResults] = useState(false);
   const [results, setResults] = useState([]);
+  const [activeResults, setActiveResults] = useState(false);
 
   const searchData = async (search) => {
     try {
@@ -79,6 +80,8 @@ function Input() {
         showResults={showResults}
         results={results}
         setShowResults={setShowResults}
+        setActiveResults={setActiveResults}
+        activeResults={activeResults}
       />
       <div className="Input">
         <Search>
@@ -89,9 +92,13 @@ function Input() {
             placeholder="Buscar celular"
             inputProps={{ "aria-label": "search" }}
             onChange={handleChange}
-            onFocus={() => setShowResults(true)}
+            onFocus={() => {
+              setShowResults(true);
+            }}
             onBlur={() => {
+              if (activeResults) return;
               setShowResults(false);
+              console.log("Foucs out");
             }}
           />
         </Search>
