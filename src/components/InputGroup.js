@@ -47,14 +47,39 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 function Input() {
   const [showResults, setShowResults] = useState(false);
+  const [results, setResults] = useState([]);
+
+  const searchData = async (search) => {
+    try {
+      const response = await fetch(
+        `https://celulapp.herokuapp.com/v1/celulares/marca/${search}`
+      );
+      const data = await response.json();
+      if (data.length > 0) {
+        setResults(data);
+      } else {
+        setResults([]);
+      }
+
+      // console.log(results);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   const handleChange = (e) => {
-    console.log(e.target.value);
+    const search = e.target.value.toLowerCase();
+    if (!search) return;
+    searchData(search);
   };
 
   return (
     <>
-      <SearchResults showResults={showResults} />
+      <SearchResults
+        showResults={showResults}
+        results={results}
+        setShowResults={setShowResults}
+      />
       <div className="Input">
         <Search>
           <SearchIconWrapper>
@@ -65,7 +90,9 @@ function Input() {
             inputProps={{ "aria-label": "search" }}
             onChange={handleChange}
             onFocus={() => setShowResults(true)}
-            onBlur={() => setShowResults(false)}
+            onBlur={() => {
+              setShowResults(false);
+            }}
           />
         </Search>
       </div>

@@ -4,9 +4,35 @@
   height: 300px;
   background-color: white;
   border: solid 1px black;
-  border-radius: 30px;
+  border-radius: 20px;
   position: absolute;
   top: 80px;
   z-index: 3;
   /* transform: translateX(50%); */
+  display: grid;
+  grid-template-columns: auto auto auto;
+  overflow-y: scroll;
+}
+
+.search-item {
+  width: 90%;
+  height: 50px;
+  margin: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  border: solid 1px black;
+  background-color: white;
+}
+
+.search-item:hover {
+  filter: brightness(1.2);
+  background-color: #0d6efd;
+  color: white;
+  cursor: pointer;
+}
+
+.result-img {
+  width: 20px;
 }
