@@ -4,7 +4,7 @@
   height: 300px;
   background-color: white;
   border: solid 1px black;
-  border-radius: 20px;
+  border-radius: 5px;
   position: absolute;
   top: 80px;
   z-index: 3;
@@ -12,6 +12,35 @@
   display: grid;
   grid-template-columns: auto auto auto;
   overflow-y: scroll;
+}
+.search-results::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 4px;
+}
+
+.search-results::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.search-results::-webkit-scrollbar-thumb:active {
+  background-color: #999999;
+}
+
+.search-results::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+
+/* Cambiamos el fondo cuando esté en active o hover */
+.search-results::-webkit-scrollbar-track:hover,
+.search-results::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
 }
 
 .search-item {
@@ -44,7 +73,7 @@
   height: 50px;
   background-color: white;
   border: solid 1px black;
-  border-radius: 20px;
+  border-radius: 5px;
   position: absolute;
   top: 80px;
   z-index: 3;
