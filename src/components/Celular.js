@@ -13,6 +13,10 @@ function Celular({ marca, modelo, images, precio, _id }) {
     history.push(`/details/${_id}`);
   };
 
+  function firstUpper(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
   return (
     <Container>
       <Toast style={{ width: "28rem", height: "532px" }} className="m-3 p-3">
@@ -27,10 +31,10 @@ function Celular({ marca, modelo, images, precio, _id }) {
             alt={modelo}
           />
           <Card.Title as="h2" className="text-center">
-            {marca}
+            {firstUpper(marca)}
           </Card.Title>
           <Card.Subtitle as="h5" className="text-center mb-1 text-muted">
-            {modelo}
+            {firstUpper(modelo)}
           </Card.Subtitle>
           <span className="precio text-center">$ {precio}</span>
           <Button

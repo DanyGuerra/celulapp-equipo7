@@ -70,7 +70,7 @@ function CelularDetalle(props) {
             </p>
             {/* <p>
               <strong>Camara trasera: </strong>
-              {Object.values(celular.camara)}
+              {celular.camara.trasera_Mpx}
             </p> */}
 
             {/*
