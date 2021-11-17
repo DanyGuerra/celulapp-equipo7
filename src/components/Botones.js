@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 
-import { Button } from 'react-bootstrap';
-import '../css/botones.css';
-import LoginModal from './LoginModal';
-import SignUpModal from './SignUpModal';
+import { Button } from "react-bootstrap";
+import "../css/botones.css";
+import LoginModal from "./LoginModal";
+import SignUpModal from "./SignUpModal";
 
 function Botones() {
   const [modalSignUpShow, setModalSignUpShow] = React.useState(false);
   const [modalLoginShow, setModalLoginShow] = React.useState(false);
 
   return (
-    <div className='botones'>
-      <Button variant='outline-primary' onClick={() => setModalLoginShow(true)}>
+    <div className="botones">
+      <Button variant="primary" onClick={() => setModalLoginShow(true)}>
         Login
       </Button>
       <LoginModal
@@ -19,7 +19,7 @@ function Botones() {
         onHide={() => setModalLoginShow(false)}
       />
       <Button
-        variant='outline-secondary'
+        variant="outline-secondary"
         onClick={() => setModalSignUpShow(true)}
       >
         Sign Up

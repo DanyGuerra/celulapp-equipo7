@@ -3,7 +3,6 @@ import { Navbar, Nav, Container, NavLink } from "react-bootstrap";
 import Botones from "./Botones";
 import "../css/Navbar.css";
 import Input from "./InputGroup";
-import { Link } from "react-router-dom";
 // import { PhoneAndroidIcon } from "@mui/icons-material";
 
 function NavbarElement() {
@@ -19,6 +18,13 @@ function NavbarElement() {
             "
           >
             <NavLink href="/">Home</NavLink>
+            <NavLink
+              onMouseOver={() => {
+                console.log("Hola");
+              }}
+            >
+              Celulares
+            </NavLink>
 
             <NavLink href="/agregar-celular">Agregar celular</NavLink>
 
