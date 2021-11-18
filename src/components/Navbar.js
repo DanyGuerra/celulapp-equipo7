@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Nav, Container, NavLink } from "react-bootstrap";
 import Botones from "./Botones";
 import "../css/Navbar.css";
 import Input from "./InputGroup";
-// import { PhoneAndroidIcon } from "@mui/icons-material";
+import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
+import DropdownPhone from "./DropdownPhone";
 
 function NavbarElement() {
+  const [showDropPhone, setShowDropPhone] = useState(false);
+  const [activeDropPhone, setActiveDropPhone] = useState(false);
+
   return (
     <Navbar bg="light" variant="light" collapseOnSelect expand="lg" fixed="top">
       <Container>
-        <Navbar.Brand href="/">Celulapp</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <PhoneAndroidIcon></PhoneAndroidIcon>
+          Celulapp
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav
@@ -18,10 +25,15 @@ function NavbarElement() {
             "
           >
             <NavLink href="/">Home</NavLink>
+
+            <DropdownPhone showDropPhone={showDropPhone} />
             <NavLink
               onMouseOver={() => {
-                console.log("Hola");
+                setShowDropPhone(true);
               }}
+              // onMouseOut={() => {
+              //   setShowDropPhone(false);
+              // }}
             >
               Celulares
             </NavLink>

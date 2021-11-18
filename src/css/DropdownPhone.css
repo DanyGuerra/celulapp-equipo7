@@ -1,0 +1,88 @@
+.dropdown-phone {
+  text-align: center;
+  width: 40%;
+  height: 280px;
+  background-color: white;
+  border: solid 1px black;
+  border-radius: 5px;
+  position: absolute;
+  top: 80px;
+  z-index: 3;
+  transform: translateX(-15%);
+  /* display: grid;
+  grid-template-columns: auto auto auto;
+  overflow-y: scroll; */
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.dropdown-phone > div {
+  width: 25%;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.todos .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #0d6efd;
+  border-radius: 10px;
+  height: 50px;
+  font-size: 20px;
+}
+
+.todos .title:hover {
+  cursor: pointer;
+  filter: brightness(1.2);
+}
+
+.mas-filtros {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0d6efd;
+  border-radius: 10px;
+  height: 30px;
+  margin-top: 20px;
+}
+
+.mas-filtros:hover {
+  cursor: pointer;
+  /* filter: brightness(1.2); */
+  background-color: #ddd;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  height: 50px;
+  font-size: 20px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.col .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  height: 40px;
+  width: 80%;
+}
+
+.col .item:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
