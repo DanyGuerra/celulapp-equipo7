@@ -5,10 +5,19 @@ import "../css/Navbar.css";
 import Input from "./InputGroup";
 import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import DropdownPhone from "./DropdownPhone";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 
 function NavbarElement() {
   const [showDropPhone, setShowDropPhone] = useState(false);
-  const [activeDropPhone, setActiveDropPhone] = useState(false);
+
+  function arrowDrop() {
+    if (showDropPhone) {
+      return <ArrowDropUpIcon></ArrowDropUpIcon>;
+    } else {
+      return <ArrowDropDownIcon></ArrowDropDownIcon>;
+    }
+  }
 
   return (
     <Navbar bg="light" variant="light" collapseOnSelect expand="lg" fixed="top">
@@ -26,16 +35,19 @@ function NavbarElement() {
           >
             <NavLink href="/">Home</NavLink>
 
-            <DropdownPhone showDropPhone={showDropPhone} />
+            <DropdownPhone
+              showDropPhone={showDropPhone}
+              setShowDropPhone={setShowDropPhone}
+            />
             <NavLink
-              onMouseOver={() => {
-                setShowDropPhone(true);
+              onClick={() => {
+                setShowDropPhone(!showDropPhone);
               }}
-              // onMouseOut={() => {
-              //   setShowDropPhone(false);
-              // }}
             >
-              Celulares
+              <div className="item-nav-link">
+                Celulares
+                {arrowDrop()}
+              </div>
             </NavLink>
 
             <NavLink href="/agregar-celular">Agregar celular</NavLink>

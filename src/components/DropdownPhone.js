@@ -5,10 +5,6 @@ import "../css/DropdownPhone.css";
 const DropdownPhone = (props) => {
   // const history = useHistory();
 
-  function firstUpper(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
-
   if (props.showDropPhone) {
     return (
       <div className="dropdown-phone">
