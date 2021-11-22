@@ -80,6 +80,8 @@
   border-radius: 10px;
   height: 40px;
   width: 80%;
+  text-decoration: none;
+  color: black;
 }
 
 .col .item:hover {
