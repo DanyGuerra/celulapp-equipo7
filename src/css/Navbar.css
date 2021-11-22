@@ -31,3 +31,7 @@
   /* background-color: red; */
   justify-content: center;
 }
+
+.item-nav-link {
+  display: flex;
+}

@@ -3,6 +3,7 @@
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fill, 25rem);
+  margin-top: 5%;
 }
 .Row {
   display: flex;
@@ -11,6 +12,11 @@
 /* .btn-detalle {
   margin-bottom: 0;
 } */
+
+.detalleCelular {
+  margin-top: 5%;
+}
+
 .precio {
   font-size: 1.5rem;
   text-align: center;
