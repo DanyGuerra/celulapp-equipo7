@@ -46,8 +46,16 @@ const DropdownPhone = (props) => {
         </div>
         <div className="col">
           <div className="title">Sistema Operativo</div>
-          <div className="item"> Android</div>
-          <div className="item"> IOS</div>
+          <div className="item" onClick={closeDropPhone}>
+            <Link to="/so/android" className="item">
+              Android
+            </Link>
+          </div>
+          <div className="item" onClick={closeDropPhone}>
+            <Link to="/so/ios" className="item">
+              IOS
+            </Link>
+          </div>
         </div>
         <div className="col">
           <div className="title">Memoria Ram</div>
