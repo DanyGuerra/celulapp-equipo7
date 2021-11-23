@@ -59,10 +59,32 @@ const DropdownPhone = (props) => {
         </div>
         <div className="col">
           <div className="title">Memoria Ram</div>
-          <div className="item"> 2 gb</div>
-          <div className="item"> 4 gb</div>
-          <div className="item"> 6 gb</div>
-          <div className="item"> 12 gb</div>
+
+          <div className="item" onClick={closeDropPhone}>
+            <Link to="/ram/3" className="item">
+              3 gb
+            </Link>
+          </div>
+          <div className="item" onClick={closeDropPhone}>
+            <Link to="/ram/4" className="item">
+              4 gb
+            </Link>
+          </div>
+          <div className="item" onClick={closeDropPhone}>
+            <Link to="/ram/6" className="item">
+              6 gb
+            </Link>
+          </div>
+          <div className="item" onClick={closeDropPhone}>
+            <Link to="/ram/8" className="item">
+              8 gb
+            </Link>
+          </div>
+          <div className="item" onClick={closeDropPhone}>
+            <Link to="/ram/12" className="item">
+              12 gb
+            </Link>
+          </div>
         </div>
       </div>
     );
