@@ -9,15 +9,15 @@ import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
 import Card from 'react-bootstrap/Card';
 
-const URL = "https://celulapp.herokuapp.com/v1/celulares/crearCelular/";
-
-export class RegistrarCelular extends Component {
+export class ModificarCelular extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       validated: false,
       showAlert: false,
       showError: false,
+      showConexion:false,
       marca: '',
       camaraTrasera: '',
       camaraFrontal: '',
@@ -35,9 +35,51 @@ export class RegistrarCelular extends Component {
       precio: 0
     };
 
+    this.id = props.match.params.id;
+
+    this.GetCellula = this.GetCellula.bind(this);
+    this.handleBack = this.handleBack.bind(this);
+
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  componentDidMount() { //<----------------------------
+    this.GetCellula(this.id);
+  }
+
+  handleBack() {
+    this.props.history.push(`/details/${this.id}`);
+  }
+
+  async GetCellula(id){
+
+    try {
+      const response = await fetch(
+        `https://celulapp.herokuapp.com/v1/celulares/${id}`
+      );
+      const data = await response.json();
+
+      this.setValueInput("marca", data.marca.toUpperCase());
+      this.setValueInput("modelo", data.modelo.toUpperCase());
+      this.setValueInput("sistemaOperativo", data.sistema_operativo.toUpperCase());
+      this.setValueInput("almacenamiento", data.almacenamiento_gb);
+      this.setValueInput("ram", data.ram_gb);
+      this.setValueInput("tamano", data.tamano_pantalla_in);
+      this.setValueInput("color", data.color);
+      this.setValueInput("peso", data.peso_gr);
+      this.setValueInput("bateria", data.bateria_mAh);
+      this.setValueInput("camaraFrontal", data.camara.frontal_Mpx);
+      this.setValueInput("camaraTrasera", data.camara.trasera_Mpx);
+      this.setValueInput("precio", data.precio);
+      this.setValueInput("imagenFrontal", data.images[0]);
+      this.setValueInput("imagenTrasera", data.images[1]);
+      this.setValueInput("imagenOpcional", data.images[2]);
+
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   handleInputChange(event) {
     const target = event.target;
@@ -45,6 +87,13 @@ export class RegistrarCelular extends Component {
     const name = target.name;
     this.setState({
       [name]: value,
+    });
+  }
+
+  setValueInput(tagName,value)
+  {
+    this.setState({
+      [tagName]: value,
     });
   }
 
@@ -73,17 +122,24 @@ export class RegistrarCelular extends Component {
         precio: this.state.precio,
       };
 
+      const URL = `https://celulapp.herokuapp.com/v1/celulares/modificarCelular/${this.id}`;
+
       const response = await fetch(URL, {
-        method: 'POST',
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
       });
+      console.log(response.status);
       if (response.status === 201) {
         this.setState({
           showAlert: true,
           showError: false,
+        });
+      }else if (response.status === 401) {
+        this.setState({
+          showConexion: true,
         });
       } else {
         this.setState({
@@ -101,13 +157,16 @@ export class RegistrarCelular extends Component {
     return (
       <Container>
         <Card style={{ marginTop: '100px' }}>
-        <Card.Header>Registro de celulares</Card.Header>
+        <Card.Header>Actualizar datos de celular</Card.Header>
           <Card.Body>
             {this.state.showAlert && (
-              <Alert variant={'success'}>Celular almacenado con exito.</Alert>
+              <Alert variant={'success'}>Celular actualizado con exito.</Alert>
             )}
             {this.state.showError && (
-              <Alert variant={'danger'}>No se pudo almacenar el celular.</Alert>
+              <Alert variant={'danger'}>No se pudo actualizar la información del celular.</Alert>
+            )}
+            {this.state.showConexion && (
+              <Alert variant={'warning'}>No tienes permiso para modificar, necesitar hacer login.</Alert>
             )}
             <Form
               noValidate
@@ -122,6 +181,7 @@ export class RegistrarCelular extends Component {
                       type="text"
                       name="marca"
                       placeholder="Marca"
+                      value={this.state.marca}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -136,6 +196,7 @@ export class RegistrarCelular extends Component {
                       type="text"
                       placeholder="Modelo"
                       name="modelo"
+                      value={this.state.modelo}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -150,6 +211,7 @@ export class RegistrarCelular extends Component {
                       type="text"
                       placeholder="Sistema Operativo"
                       name="sistemaOperativo"
+                      value={this.state.sistemaOperativo}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -169,6 +231,7 @@ export class RegistrarCelular extends Component {
                       type="number"
                       placeholder="Almacenamiento"
                       name="almacenamiento"
+                      value={this.state.almacenamiento}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -183,6 +246,7 @@ export class RegistrarCelular extends Component {
                       type="numer"
                       placeholder="Memoria RAM"
                       name="ram"
+                      value={this.state.ram}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -197,6 +261,7 @@ export class RegistrarCelular extends Component {
                       type="text"
                       placeholder="Tamaño de pantalla"
                       name="tamano"
+                      value={this.state.tamano}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -211,6 +276,7 @@ export class RegistrarCelular extends Component {
                       type="text"
                       name="color"
                       placeholder="rojo,azul,blanco"
+                      value={this.state.color}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -227,6 +293,7 @@ export class RegistrarCelular extends Component {
                       type="number"
                       placeholder="Peso"
                       name="peso"
+                      value={this.state.peso}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -241,6 +308,7 @@ export class RegistrarCelular extends Component {
                       type="numer"
                       placeholder="Bateria mah"
                       name="bateria"
+                      value={this.state.bateria}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -255,6 +323,7 @@ export class RegistrarCelular extends Component {
                       type="text"
                       placeholder="Camara frontal MPX"
                       name="camaraTrasera"
+                      value={this.state.camaraTrasera}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -269,6 +338,7 @@ export class RegistrarCelular extends Component {
                       type="text"
                       placeholder="Camara trasera MPX"
                       name="camaraFrontal"
+                      value={this.state.camaraFrontal}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -285,6 +355,7 @@ export class RegistrarCelular extends Component {
                       type="numer"
                       placeholder="Precio"
                       name="precio"
+                      value={this.state.precio}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -299,6 +370,7 @@ export class RegistrarCelular extends Component {
                       type="text"
                       placeholder="Http://imagen1.jpg"
                       name="imagenFrontal"
+                      value={this.state.imagenFrontal}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -313,6 +385,7 @@ export class RegistrarCelular extends Component {
                       type="text"
                       placeholder="Http://imagen2.jpg"
                       name="imagenTrasera"
+                      value={this.state.imagenTrasera}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -329,6 +402,7 @@ export class RegistrarCelular extends Component {
                       type="text"
                       placeholder="Http://imagen3.jpg"
                       name="imagenOpcional"
+                      value={this.state.imagenOpcional}
                       onChange={this.handleInputChange}
                     />
                   </FloatingLabel>
@@ -336,6 +410,11 @@ export class RegistrarCelular extends Component {
               </Row>
               <Button type="submit" variant="contained">
                 Guardar
+              </Button>
+              <Button type="submit" 
+                variant="outlined"
+                onClick={this.handleBack}>
+                Cancelar
               </Button>
             </Form>
           </Card.Body>
@@ -350,4 +429,4 @@ export class RegistrarCelular extends Component {
   }
 }
 
-export default RegistrarCelular;
+export default ModificarCelular;

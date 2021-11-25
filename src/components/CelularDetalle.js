@@ -6,6 +6,7 @@ import Toast from "react-bootstrap/Toast";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { useHistory } from "react-router";
 
 function CelularDetalle(props) {
   const [celular, setCelular] = React.useState({});
@@ -29,6 +30,11 @@ function CelularDetalle(props) {
     },
     [id]
   );
+
+  const history = useHistory();
+  const handleDetalles = (e) => {
+    history.push(`/modificarcelular/${id}`);
+  };
 
   return (
     <Container className="detalleCelular p-5">
@@ -96,6 +102,13 @@ function CelularDetalle(props) {
             <span className="p-3 text-center precio">$ {celular.precio}</span>
             <Button variant="primary" className="text-center m-2">
               Agregar al carrito
+            </Button>
+            <Button
+              variant="success"
+              className="text-center m-2"
+              onClick={(e) => handleDetalles(e)}
+              >
+               Editar
             </Button>
           </Col>
         </Row>

@@ -9,6 +9,7 @@ import RegistrarCelular from "./RegistrarCelular";
 import CelularDetalle from "./CelularDetalle";
 import FiltroMarca from "./FiltroMarca";
 import CelularesList from "./CelularesList";
+import ModificarCelular from "./ModificarCelular";
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
         <Route
           path="/details/:id"
           render={(props) => <CelularDetalle {...props} />}
+        />
+        <Route 
+            path="/modificarcelular/:id"
+            render={(props) => <ModificarCelular {...props} />} 
         />
         <Route path="*" component={NotFound} />
       </Switch>
