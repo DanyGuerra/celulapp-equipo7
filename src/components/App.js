@@ -9,6 +9,8 @@ import RegistrarCelular from "./RegistrarCelular";
 import CelularDetalle from "./CelularDetalle";
 import FiltroMarca from "./FiltroMarca";
 import CelularesList from "./CelularesList";
+import FiltroSO from "./FiltroSO";
+import FiltroRam from "./FiltroRam";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/agregar-celular" component={RegistrarCelular} />
         <Route path="/todos-los-celulares" component={CelularesList} />
         <Route path="/marca/:marca" component={FiltroMarca} />
+        <Route path="/so/:so" component={FiltroSO} />
+        <Route path="/ram/:ram" component={FiltroRam} />
         <Route
           path="/details/:id"
           render={(props) => <CelularDetalle {...props} />}
