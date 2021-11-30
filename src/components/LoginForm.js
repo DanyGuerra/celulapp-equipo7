@@ -38,8 +38,6 @@ export class LoginForm extends Component {
         password: this.state.password,
       };
 
-      console.log(JSON.stringify(data));
-
       const response = await fetch(URL, {
         method: 'POST',
         headers: {
@@ -47,7 +45,13 @@ export class LoginForm extends Component {
         },
         body: JSON.stringify(data),
       });
+      
       if (response.status === 200) {
+        
+        const dataResponse = await response.json();
+
+        localStorage.setItem('token',dataResponse.user.token);
+
         this.setState({
           showAlert: true,
           showError: false,
