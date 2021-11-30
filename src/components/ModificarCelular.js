@@ -36,6 +36,7 @@ export class ModificarCelular extends Component {
     };
 
     this.id = props.match.params.id;
+    this.token = localStorage.getItem('token');
 
     this.GetCellula = this.GetCellula.bind(this);
     this.handleBack = this.handleBack.bind(this);
@@ -128,11 +129,12 @@ export class ModificarCelular extends Component {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.token}`
         },
         body: JSON.stringify(data),
       });
-      console.log(response.status);
-      if (response.status === 201) {
+
+      if (response.status === 200) {
         this.setState({
           showAlert: true,
           showError: false,

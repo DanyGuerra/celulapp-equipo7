@@ -18,6 +18,7 @@ export class RegistrarCelular extends Component {
       validated: false,
       showAlert: false,
       showError: false,
+      showConexion:false,
       marca: '',
       camaraTrasera: '',
       camaraFrontal: '',
@@ -35,6 +36,7 @@ export class RegistrarCelular extends Component {
       precio: 0
     };
 
+    this.token = localStorage.getItem('token');
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -77,6 +79,7 @@ export class RegistrarCelular extends Component {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${this.token}`
         },
         body: JSON.stringify(data),
       });
@@ -85,7 +88,11 @@ export class RegistrarCelular extends Component {
           showAlert: true,
           showError: false,
         });
-      } else {
+      }else if (response.status === 401) {
+        this.setState({
+          showConexion: true,
+        });
+      }else {
         this.setState({
           showError: true,
         });
@@ -108,6 +115,9 @@ export class RegistrarCelular extends Component {
             )}
             {this.state.showError && (
               <Alert variant={'danger'}>No se pudo almacenar el celular.</Alert>
+            )}
+            {this.state.showConexion && (
+              <Alert variant={'warning'}>No tienes permiso para modificar, necesitar hacer login.</Alert>
             )}
             <Form
               noValidate
