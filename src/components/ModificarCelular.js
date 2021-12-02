@@ -73,9 +73,26 @@ export class ModificarCelular extends Component {
       this.setValueInput("camaraFrontal", data.camara.frontal_Mpx);
       this.setValueInput("camaraTrasera", data.camara.trasera_Mpx);
       this.setValueInput("precio", data.precio);
-      this.setValueInput("imagenFrontal", data.images[0]);
-      this.setValueInput("imagenTrasera", data.images[1]);
-      this.setValueInput("imagenOpcional", data.images[2]);
+
+      if(data.images.lenght = 1)
+        {
+          this.setValueInput("imagenFrontal", data.images[0]);
+          this.setValueInput("imagenTrasera", '');
+          this.setValueInput("imagenOpcional", '');
+      }
+      else if(data.images.lenght = 2)
+      {
+        this.setValueInput("imagenFrontal", data.images[0]);
+        this.setValueInput("imagenTrasera", data.images[1]);
+        this.setValueInput("imagenOpcional", '');
+      }
+
+ /*     if(data.images.lenght = 3)
+      {
+        this.setValueInput("imagenFrontal", data.images[0]);
+        this.setValueInput("imagenTrasera", data.images[1]);
+        this.setValueInput("imagenOpcional", data.images[2]);
+      } */
 
     } catch (e) {
       console.error(e);
@@ -102,6 +119,8 @@ export class ModificarCelular extends Component {
     const form = event.currentTarget;
     event.preventDefault();
     event.stopPropagation();
+
+    console.log('boton');
 
     if (form.checkValidity() === true) {
 
