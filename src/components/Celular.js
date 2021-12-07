@@ -27,7 +27,7 @@ function Celular({ marca, modelo, images, precio, _id }) {
               width: "auto",
               textAlign: "center",
             }}
-            src={images}
+            src={images[0]}
             alt={modelo}
           />
           <Card.Title as="h2" className="text-center">

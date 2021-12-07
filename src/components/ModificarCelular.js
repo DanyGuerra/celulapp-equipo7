@@ -87,12 +87,12 @@ export class ModificarCelular extends Component {
         this.setValueInput("imagenOpcional", '');
       }
 
- /*     if(data.images.lenght = 3)
+     if(data.images.lenght = 3)
       {
         this.setValueInput("imagenFrontal", data.images[0]);
         this.setValueInput("imagenTrasera", data.images[1]);
         this.setValueInput("imagenOpcional", data.images[2]);
-      } */
+      }
 
     } catch (e) {
       console.error(e);
@@ -120,9 +120,13 @@ export class ModificarCelular extends Component {
     event.preventDefault();
     event.stopPropagation();
 
-    console.log('boton');
-
     if (form.checkValidity() === true) {
+
+      let arrayImage = [];
+
+      arrayImage.push(this.state.imagenFrontal);
+      arrayImage.push(this.state.imagenTrasera);
+      arrayImage.push(this.state.imagenOpcional);
 
       const data = {
         camara: {
@@ -138,7 +142,7 @@ export class ModificarCelular extends Component {
         bateria_mAh: this.state.bateria,
         tamano_pantalla_in: this.state.tamano,
         sistema_operativo: this.state.sistemaOperativo,
-        images: [this.state.imagenFrontal, this.state.imagenTrasera, this.state.imagenOpcional],
+        images: arrayImage,
         precio: this.state.precio,
       };
 

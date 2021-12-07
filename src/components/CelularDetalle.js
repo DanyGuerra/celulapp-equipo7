@@ -11,6 +11,7 @@ import { useHistory } from "react-router";
 function CelularDetalle(props) {
   const [celular, setCelular] = React.useState({});
   const id = props.match.params.id;
+  const [images, setimages] = React.useState({});
 
   React.useEffect(
     function () {
@@ -21,6 +22,7 @@ function CelularDetalle(props) {
           );
           const data = await response.json();
           setCelular(data);
+          setimages(data.images[0]);
         } catch (e) {
           console.error(e);
         }
@@ -49,7 +51,7 @@ function CelularDetalle(props) {
                 maxHeight: "25rem",
                 width: "auto",
               }}
-              src={celular.images}
+              src={images}
               alt={celular.modelo}
               className="imgDetalle"
             />
