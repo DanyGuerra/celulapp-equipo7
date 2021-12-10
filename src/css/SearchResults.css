@@ -1,6 +1,6 @@
 .search-results {
   text-align: center;
-  width: 50%;
+  width: 40%;
   height: 300px;
   background-color: white;
   border: solid 1px black;
@@ -10,7 +10,7 @@
   z-index: 3;
   /* transform: translateX(20%); */
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   overflow-y: scroll;
 }
 .search-results::-webkit-scrollbar {
@@ -77,4 +77,22 @@
   position: absolute;
   top: 80px;
   z-index: 3;
+}
+
+@media (max-width: 1200px) {
+  .search-results {
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .search-results {
+    grid-template-columns: auto;
+    top: 260px;
+    width: 70%;
+  }
+  .search-no-results {
+    top: 260px;
+    width: 60%;
+  }
 }
