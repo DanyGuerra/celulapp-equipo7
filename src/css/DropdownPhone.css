@@ -88,3 +88,25 @@
   cursor: pointer;
   background-color: #ddd;
 }
+
+/* @media (max-width: 1200px) {
+  .dropdown-phone {
+    background-color: red;
+  }
+} */
+
+@media (max-width: 992px) {
+  .dropdown-phone {
+    top: 120px;
+    left: 24%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+  }
+
+  .dropdown-phone > div {
+    width: 50%;
+  }
+}

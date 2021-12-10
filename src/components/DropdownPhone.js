@@ -23,7 +23,7 @@ const DropdownPhone = (props) => {
               Todos
             </div>
           </Link>
-          <div className="mas-filtros">Mas Filtros</div>
+          {/* <div className="mas-filtros">Mas Filtros</div> */}
         </div>
         <div className="col">
           <div className="title">Marcas</div>
@@ -42,7 +42,7 @@ const DropdownPhone = (props) => {
               Samsung
             </Link>
           </div>
-          <div className="mas-filtros"> Todas las marcas</div>
+          {/* <div className="mas-filtros"> Todas las marcas</div> */}
         </div>
         <div className="col">
           <div className="title">Sistema Operativo</div>
