@@ -53,7 +53,7 @@ function Input() {
   const searchData = async (search) => {
     try {
       const response = await fetch(
-        `https://celulapp.herokuapp.com/v1/celulares/marca/${search}`
+        `https://celulapp.herokuapp.com/v1/celulares/search/${search}`
       );
       const data = await response.json();
       if (data.length > 0) {
