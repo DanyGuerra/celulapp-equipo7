@@ -19,7 +19,7 @@ const CelularesList = (props) => {
   }, []);
 
   return (
-    <Container className="List d-f">
+    <Container className="List d-f ContainerList">
       {celulares.map((item) => (
         <Celular key={item._id} {...item} />
       ))}
