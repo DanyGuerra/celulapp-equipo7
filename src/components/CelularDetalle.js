@@ -12,6 +12,7 @@ function CelularDetalle(props) {
   const [celular, setCelular] = React.useState({});
   const id = props.match.params.id;
   const [images, setimages] = React.useState({});
+  const [token, setToken] = React.useState(localStorage.getItem('token'));
 
   React.useEffect(
     function () {
@@ -101,17 +102,19 @@ function CelularDetalle(props) {
               <strong>Color: </strong>
               {celular.color + " "}
             </p>
-            <span className="p-3 text-center precio">$ {celular.precio}</span>
+            <p className="p-3 text-center precio"><strong>$ {celular.precio}</strong></p>
             <Button variant="primary" className="text-center m-2">
               Agregar al carrito
             </Button>
-            <Button
-              variant="success"
-              className="text-center m-2"
-              onClick={(e) => handleDetalles(e)}
-              >
-               Editar
-            </Button>
+            {token && (
+                          <Button
+                          variant="success"
+                          className="text-center m-2"
+                          onClick={(e) => handleDetalles(e)}
+                          >
+                           Editar
+                        </Button>
+            )}
           </Col>
         </Row>
       </Toast>

@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
 import Card from 'react-bootstrap/Card';
+import LoginModal from "./LoginModal";
 
 const URL = "https://celulapp.herokuapp.com/v1/celulares/crearCelular/";
 
@@ -15,6 +16,7 @@ export class RegistrarCelular extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      modalLoginShow: false,
       validated: false,
       showAlert: false,
       showError: false,
@@ -51,6 +53,13 @@ export class RegistrarCelular extends Component {
   }
 
   async handleSubmit(event) {
+    //Redirect Modal Login
+    if(this.token == null)
+    {
+        this.setState({
+          modalLoginShow:true
+        });
+    }
     const form = event.currentTarget;
     event.preventDefault();
     event.stopPropagation();
