@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# CelulApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Página Web para celulares E-Commerce
 
-## Available Scripts
+## 📱 Link de página Celulapp: [https://cellulapp.herokuapp.com/](https://cellulapp.herokuapp.com/)
 
-In the project directory, you can run:
+Plataforma web donde los usuarios pueden vender/comprar celulares nuevos o usados de forma accesibles y confiable.
 
-### `npm start`
+## Integrantes del equipo 7
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- María Fernanda Orozco Castro [@Orozcastro](https://www.github.com/Orozcastro)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Luis Daniel Ramirez Guerra [@DanyGuerra](https://www.github.com/DanyGuerra)
 
-### `npm test`
+- Luis Felipe Carillo Alvarado [@carrillodev](https://www.github.com/carrillodev)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Victor Alberto Díaz Sánchez [@vads26](https://www.github.com/vads26)
 
-### `npm run build`
+## Objetivo principal
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Plataforma web donde los usuarios pueden vender/comprar celulares nuevos o usados de forma accesibles y confiable.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Problema a solucionar
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Facilitarle a los usuarios la compra de un celular
 
-### `npm run eject`
+Hay muchos celulares usados que se encuentran en buen estado y estos pueden ser comprados por personas que no cuentan con los recursos para comprar un celular nuevo
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Próximos pasos
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Implementar el método de pago(paypal, mercadopago,etc).
+- Implementar la forma de envio(paqueteria).
+- Adaptarnos a la ley de protección de datos de cada país.
+- Alta disponibilidad del servicio(24/7)
+- Aplicación móvil nativa para diferentes SO.
